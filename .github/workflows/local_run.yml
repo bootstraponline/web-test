@@ -19,12 +19,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14'
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          npm install .
-          npx test-runner --browser-name=chromium
+      - run: npm install
+      - run: npm version
+      - run: npx test-runner --browser-name=chromium
