@@ -24,6 +24,8 @@ jobs:
           node-version: '14'
 
       - run: npm install
+      - run: node --version
       - run: npm --version
+      - run: npm install -g npx
       - run: npx --version
       - run: npx test-runner --browser-name=chromium
