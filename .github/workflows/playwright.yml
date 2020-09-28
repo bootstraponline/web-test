@@ -15,11 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '14'
-
       - run: npm i -g saucectl
       - run: saucectl -v
       - run: saucectl run
@@ -39,11 +37,7 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '14'
-
       - run: npm install
-      - run: node --version
-      - run: npm --version
-      
       # run playwright test in tests/ by setting the working directory.
       - run: npx test-runner --browser-name=chromium
         working-directory: tests/
