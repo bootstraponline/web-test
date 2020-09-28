@@ -7,9 +7,9 @@
 Run with:
 
 ```
-npm i -g saucectl
-cd sauce/
-saucectl run
+npm install
+cd tests/
+npx test-runner --browser-name=chromium
 ```
 
 - [CI job](./.github/workflows/playwright.yml)
@@ -21,9 +21,9 @@ saucectl run
 Run with:
 
 ```
-npm install
-cd tests/
-npx test-runner --browser-name=chromium
+npm i -g saucectl
+cd sauce/
+saucectl run
 ```
 
 - [CI job](./.github/workflows/playwright.yml)
